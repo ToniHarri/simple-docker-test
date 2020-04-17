@@ -20,6 +20,7 @@ DO NOT USE THIS IN PRODUCTION! IT'S NOT SAFE!
 ---
 
 FUTURE TODO:
+- Php-fpm via unix socket instead of tcp port.
 - Mailcatcher to test mail sending.
 - Composer installation and usage.
 - Actual framework in use, like Symfony.
