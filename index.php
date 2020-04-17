@@ -9,8 +9,6 @@ $db = new PDO(
     'test_user'
 );
 
-// $databaseTest = [];
-
 $databaseTest = ($db->query('SELECT * FROM dockerSample'))->fetchAll(PDO::FETCH_OBJ);
 
 ?>
