@@ -1,3 +1,10 @@
+CREATE DATABASE IF NOT EXISTS `test`;
+CREATE DATABASE IF NOT EXISTS `live`;
+
+CREATE USER 'test_user'@'%' IDENTIFIED BY 'test_user';
+
+GRANT ALL PRIVILEGES ON *.* TO 'test_user'@'%';
+
 use test;
 
 DROP TABLE IF EXISTS `dockerSample`;

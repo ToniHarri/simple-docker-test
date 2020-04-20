@@ -32,15 +32,17 @@ services:
         container_name: docker-test-mariadb
         environment:
             - MYSQL_DATABASE=test
-            - MYSQL_USER=test_user
-            - MYSQL_PASSWORD=test_user
             - MYSQL_ROOT_PASSWORD=root
         volumes:
             # This will write the mysql data into the project folder and persist
             # it there. It will survive the container reboots this way. But:
             # This also causes the docker build to fail because it cannot access
-            # the file.
+            # the file. FUTURE TODO: Figure out why the build fails and fix this.
             # - .Docker/MariaDb/data/mysql:/var/lib/mysql
+            #
+            # This will run the initData.sql script after the server is
+            # initialized. It's good for creating additional databases, users,
+            # etc.
             - .Docker/MariaDb/initData.sql:/docker-entrypoint-initdb.d/data.sql
         networks:
             - docker-test
